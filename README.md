@@ -1,2 +1,3 @@
 # optivalueTek-fuse-rapid-track
-This repo is meant for OptivalueTek fuse participants to refer the notes of the session
+
+This repo contains the fuse rapid track course notes for OptivalueTek participants
