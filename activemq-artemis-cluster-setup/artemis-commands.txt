@@ -1,0 +1,78 @@
+address        Address tools group (create|delete|update|show) (example ./artemis address create)
+browser        It will browse messages on an instance
+consumer       It will consume messages from an instance
+data           data tools group (print|imp|exp|encode|decode|compact) (example ./artemis data print)
+help           Display help information
+kill           Kills a broker instance started with --allow-kill
+mask           mask a password and print it out
+perf-journal   Calculates the journal-buffer-timeout you should use with the current data folder
+producer       It will send messages to an instance
+queue          Queue tools group (create|delete|update|stat) (example ./artemis queue create)
+run            runs the broker instance
+stop           stops the broker instance
+user           default file-based user management (add|rm|list|reset) (example ./artemis user list)
+------------------------------------------------------------------------------------------------------------
+
+# Check the command line options and details
+
+$ ./artemis help data print
+
+$ ./artemis help producer
+
+------------------------------------------------------------------------------------------------------------
+$./artemis create ../_myBrokers/broker-1
+
+$./artemis create ../_myBrokers/broker-2
+
+--user=admin 
+--password=admin@123
+--default role=amq
+--anonymous access=Y
+
+## Change directory to ${broker-home}/bin
+** start broker
+$artemis run
+
+** start broker in background
+$artemis start
+
+** Produce messages 
+$artemis producer --destination helloworld --message-count 100 --url tcp://localhost:61616
+
+** Consume messages
+$artemis consumer --destination helloworld --message-count 50 --url tcp://localhost:61616
+
+** stop broker
+$artemis stop
+
+-----------------------------------------------------------------------------------------------------------
+# Masking password
+$./artemis mask pa55word
+
+# Stop the server and check data
+$./artemis data print
+$./artemis perf-journal
+
+# Add new user
+$./artemis user add
+
+# List A-MQ users
+$./artemis user list
+
+# Remove user
+$./artemis user rm
+
+
+# Artemis address operations
+$ ./artemis address show
+
+$ ./artemis address create
+
+$ ./artemis address show
+
+$ ./artemis address delete
+
+$ ./artemis address update
+
+# Queue creation
+$ ./artemis queue create
