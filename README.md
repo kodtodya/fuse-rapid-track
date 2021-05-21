@@ -1,3 +1,3 @@
-fuse-rapid-track
+## fuse-rapid-track
 
-This repo contains the fuse rapid track course notes for OptivalueTek participants
+This repo contains the Fuse-7 Rapid Track course notes participants
